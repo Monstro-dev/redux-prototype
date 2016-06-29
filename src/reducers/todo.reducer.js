@@ -20,9 +20,9 @@ export default function todoReducer( state = todoInitialState, action ) {
                 }
             ];
         case REMOVE_TODO:
-            return [
-                ...state
-            ].splice(action.index, 1);
+            let newState = [...state];
+            newState.splice(action.index, 1);
+            return newState;
         default:
             return state;
     }

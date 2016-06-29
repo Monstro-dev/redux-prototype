@@ -14,7 +14,7 @@ module.exports = {
     output: {
         path: path.join(__dirname, 'dist'),
         filename: 'bundle.js',
-        publicPath: '/public/'
+        publicPath: '/public/' // for the images or other assets
     },
     module: {
         loaders: [
