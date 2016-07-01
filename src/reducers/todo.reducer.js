@@ -1,6 +1,6 @@
 // the reducer is used to trasiting states
 
-import { ADD_TODO, REMOVE_TODO, addTodo } from './../actions/todo.action';
+import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from './../actions/todo.action';
 
 // We need to define an initial state
 const todoInitialState = [];
@@ -20,9 +20,18 @@ export default function todoReducer( state = todoInitialState, action ) {
                 }
             ];
         case REMOVE_TODO:
-            let newState = [...state];
-            newState.splice(action.index, 1);
-            return newState;
+            return state.filter( (s, index) => {
+                return index !== action.index;
+            });
+        case TOGGLE_TODO:
+            return state.map( (s, index) => {
+                if (index === action.index) {
+                    return Object.assign({}, s, {
+                        completed: !s.completed
+                    });
+                }
+                return Object.assign({}, s);
+            });
         default:
             return state;
     }

@@ -1,11 +1,15 @@
 require('./Main.scss');
 
-import React, { Component } from 'react';
+import React from 'react';
+import TodoList from '../TodoList/TodoList';
 
-class Main extends Component {
+class Main extends React.Component {
   render() {
     return (
-      <h1>Hello, world.</h1>
+        <div>
+            <h1>Inspect the console to see the redux flow</h1>
+            <TodoList />
+        </div>
     );
   }
 }
