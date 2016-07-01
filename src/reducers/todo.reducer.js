@@ -16,12 +16,13 @@ export default function todoReducer( state = todoInitialState, action ) {
                 ...state, // copy the existing todos to new array
                 {
                     text: action.text,
+                    id: action.id,
                     completed: false
                 }
             ];
         case REMOVE_TODO:
-            return state.filter( (s, index) => {
-                return index !== action.index;
+            return state.filter( (s) => {
+                return s.id !== action.id;
             });
         case TOGGLE_TODO:
             return state.map( (s, index) => {
