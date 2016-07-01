@@ -2,9 +2,11 @@
 
 import { combineReducers } from 'redux';
 import todoReducer from './todo.reducer';
+import filterReducer from './viewFilter.reducer';
 
 const appReducer = combineReducers({
-    todoReducer
+    todoReducer,
+    filterReducer
 });
 
 export default appReducer;
