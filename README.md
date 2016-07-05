@@ -8,6 +8,8 @@ run ```npm install -g webpack eslint babel```
 
 then run ```npm install```
 
-To start ```npm start```
+Dev env:
 
-To use redux devtool from chrome extension store, run ```DEBUG=true npm start```
+run ```npm run dev-hot-server``` and ```npm run dev-web-server``` together. 
+
+To enable the redux devtools, prepend ```DEBUG=true``` before above commands.
