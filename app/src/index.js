@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import Main from './components/Main/Main';
 import appStore from './stores/app.store';
+import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
+/* override the style in styles/app.scss */
+require('./styles/app.scss');
 
 // test logic of redux
 import { addTodo, removeTodo, toggleTodo } from './actions/todo.action';
